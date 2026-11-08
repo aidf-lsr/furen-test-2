@@ -1,0 +1,13 @@
+{
+  "model": "haiku",
+  "availableModels": ["haiku", "sonnet"],
+  "enforceAvailableModels": true,
+  "permissions": {
+    "deny": [
+      "Bash(printenv:*)",
+      "Bash(env:*)",
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  }
+}

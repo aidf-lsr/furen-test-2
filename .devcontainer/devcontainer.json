@@ -1,0 +1,36 @@
+{
+  "name": "M2 Vibe Coding",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+
+  "secrets": {
+    "ANTHROPIC_API_KEY": {
+      "description": "Claude API key: copy it from the message your teacher sent your group leader."
+    },
+    "OPENAI_API_KEY": {
+      "description": "OpenAI API key (for Codex): copy it from the message your teacher sent your group leader."
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "openai.chatgpt"
+      ],
+      "settings": {
+        "workbench.startupEditor": "readme",
+        "editor.fontSize": 16,
+        "terminal.integrated.fontSize": 15,
+        "git.enableSmartCommit": true,
+        "git.confirmSync": false
+      }
+    }
+  },
+
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": { "label": "My app", "onAutoForward": "openBrowser" }
+  },
+
+  "postCreateCommand": "bash .devcontainer/setup.sh"
+}

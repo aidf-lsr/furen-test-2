@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bug Hunt: Compound Interest</title>
+</head>
+<body>
+  <h1>Compound interest calculator</h1>
+  <p>Expected: S$1,000 at 5% a year for 3 years gives S$1,157.63</p>
+  <label>Amount (S$): <input id="amount" value="1000"></label>
+  <button onclick="calculate()">Calculate</button>
+  <p id="result"></p>
+
+  <script>
+    // An AI wrote this code. It has at least 3 bugs. Can you find them?
+    function calculate() {
+      const result = document.getElementById("result");
+      const amount = document.getElementById("amount").value;
+      const rate = 5;      // % per year
+      const years = 3;
+      const total = amount + amount * rate * years;
+      result.textContent = "After 3 years: S$" + total;
+    }
+  </script>
+</body>
+</html>
